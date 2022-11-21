@@ -1,0 +1,1 @@
+export const PingoContractAddress= "0xa879a8eC018E1Ff27e6Aa2F504B5e974509fc9DC"
