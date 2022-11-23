@@ -1,6 +1,6 @@
 .postBox {
     padding-bottom: 10px;
-    border-bottom: 8px solid var(--twitter-background);
+    border-bottom: 8px solid var(--pingo-color);
     padding-right: 10px;
   }
   
@@ -15,21 +15,26 @@
   }
   
   .postBox__input > input {
+    color: #fff;
+    background-color: var(--pingo-background);
     flex: 1;
     margin-left: 20px;
     font-size: 20px;
     border: none;
+    
   }
   
-  .postBox__imageInput {
+  .postBox__videoInput {
+    background-color: var(--pingo-background);
+    color: #fff;
     border: none;
     padding: 10px;
   }
   
-  .postBox__tweetButton {
-    background-color: var(--twitter-color) !important;
+  .postBox__postButton {
     border: none !important;
     color: white !important;
+    background-color: red !important;
     font-weight: 900 !important;
     text-transform: inherit !important;
     border-radius: 30px !important;

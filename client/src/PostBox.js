@@ -74,23 +74,15 @@ function PostBox() {
           <input
             onChange={(e) => setPostMessage(e.target.value)}
             value={postMessage}
-            placeholder="What's happening?"
+            placeholder="What do you want to share?"
             type="text"
           />
         </div>
         <input
           value={postImage}
           onChange={(e) => setPostImage(e.target.value)}
-          className="postBox__imageInput"
-          placeholder="Optional: Enter image URL"
-          type="text"
-        />
-
-        <input
-          value={postVid}
-          onChange={(e) => setPostVid(e.target.value)}
-          className="postBox__imageInput"
-          placeholder="Optional: Enter vid URL"
+          className="postBox__videoInput"
+          placeholder="Optional: Enter video URL"
           type="text"
         />
 

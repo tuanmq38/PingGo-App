@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import PostBox from './PostBox';
 import Post from './Post';
+import Sidebar from './Sidebar';
 import './Feed.css';
 import { PingoContractAddress } from './config';
 import { ethers } from 'ethers';
@@ -11,6 +12,8 @@ import FlipMove from "react-flip-move";
 
 export default function Feed({personal}) {
   const [posts, setPosts] = useState([]);
+
+ 
 
   const getUpdatedPosts = (allPosts, address) => {
     let updatedPosts = [];
@@ -87,7 +90,7 @@ export default function Feed({personal}) {
       console.log(e);
     }
   }
-
+  
   return (
     <div className="feed">
     <div className="feed__header">
@@ -96,7 +99,6 @@ export default function Feed({personal}) {
 
     <PostBox />
 
-    <FlipMove>
       {posts.map((post) => (
         <Post
           key={post.id}
@@ -107,7 +109,7 @@ export default function Feed({personal}) {
           onClick={deletePost(post.id)}
         />
       ))}
-    </FlipMove>
+       
   </div>
 );
 }

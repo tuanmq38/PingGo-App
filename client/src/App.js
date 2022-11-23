@@ -1,14 +1,17 @@
 import React from "react";
 import Sidebar from "./Sidebar";
 import Feed from "./Feed";
-import Widgets from './Widgets'
+import Widgets from './Widgets';
+import PostBox from "./PostBox";
 import "./App.css";
 import { useState, useEffect } from "react";
+
 
 function App() {
 
   const [currentAccount, setCurrentAccount] = useState('');
   const [correctNetwork, setCorrectNetwork] = useState(false);
+  const [walletAddress, setWalletAddress] = useState("");
 
   // Calls Metamask to connect wallet on clicking Connect Wallet button
   const connectWallet = async () => {
@@ -25,11 +28,12 @@ function App() {
       const goerliChainId = '0x5'
 
       if (chainId !== goerliChainId) {
-        alert('You are not connected to the Rinkeby Testnet!')
+        alert('You are not connected to the Goerli Testnet!')
         return
       }
 
       const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
+      setWalletAddress(accounts[0]);
 
       console.log('Found account', accounts[0])
       setCurrentAccount(accounts[0])
@@ -59,27 +63,29 @@ function App() {
     checkCorrectNetwork();
   });
 
+
   return (
     // BEM
     <div>
     {currentAccount === '' ? (
       <button
-      className='text-2xl font-bold py-3 px-12 bg-[#f1c232] rounded-lg mb-10 hover:scale-105 transition duration-500 ease-in-out'
+      className='page'
       onClick={connectWallet}
       >
       Connect Wallet
       </button>
       ) : correctNetwork ? (
         <div className="app">
-          <Sidebar />
+          <Sidebar walletAddress={walletAddress} />
           <Feed />
           <Widgets />
         </div>
+        
+        
       ) : (
-      <div className='flex flex-col justify-center items-center mb-20 font-bold text-2xl gap-y-3'>
+      <div className=''>
       <div>----------------------------------------</div>
-      <div>Please connect to the Goerli Testnet</div>
-      <div>and reload the page</div>
+      <div>Please connect to your Wallet address</div>
       <div>----------------------------------------</div>
       </div>
     )}
