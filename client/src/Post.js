@@ -29,7 +29,7 @@ const Post = forwardRef(
               <p>{text}</p>
             </div>
             <div className="post__headerDescription">
-              <p>{vid}</p>
+              <video>{vid}</video>
             </div>
           </div>
           <div className="post__footer">

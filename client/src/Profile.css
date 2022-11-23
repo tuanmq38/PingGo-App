@@ -1,0 +1,27 @@
+.profile {
+  flex: 0.4;
+  border-right: 1px solid var(--pingo-background);
+  min-width: fit-content;
+  overflow-y: scroll;
+  color: #fff;
+}
+
+.profile__header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border: 1px solid var(--pingo-background);
+  padding: 15px 20px;
+}
+
+.profile__tabs {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.profile__tab {
+    padding-bottom: 10px;  
+    border-bottom: 2px solid #ff0000;
+}

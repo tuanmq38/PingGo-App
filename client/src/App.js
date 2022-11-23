@@ -2,10 +2,10 @@ import React from "react";
 import Sidebar from "./Sidebar";
 import Feed from "./Feed";
 import Widgets from './Widgets';
-import PostBox from "./PostBox";
 import "./App.css";
 import { useState, useEffect } from "react";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Profile from "./Profile";
 
 function App() {
 
@@ -76,9 +76,15 @@ function App() {
       </button>
       ) : correctNetwork ? (
         <div className="app">
-          <Sidebar walletAddress={walletAddress} />
-          <Feed />
-          <Widgets />
+          <Sidebar walletAddress={walletAddress}/>     
+
+          <Routes>
+              <Route path="/" element={<Feed />}></Route>
+              <Route path="/profile" element={<Profile />}></Route>
+            </Routes>
+          
+          
+          <Widgets/>
         </div>
         
         
