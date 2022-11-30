@@ -8,7 +8,6 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 const Post = forwardRef(
   ({ displayName, text, vid, personal, onClick }, ref) => {
-
     return (
       <div className="post" ref={ref}>
         <div className="post__avatar">
@@ -17,6 +16,7 @@ const Post = forwardRef(
             avatarStyle='Circle'
             {...generateRandomAvatarOptions() }
           />
+          
         </div>
         <div className="post__body">
           <div className="post__header">

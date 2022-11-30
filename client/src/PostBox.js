@@ -78,14 +78,7 @@ function PostBox() {
             type="text"
           />
         </div>
-        <input
-          value={postImage}
-          onChange={(e) => setPostImage(e.target.value)}
-          className="postBox__videoInput"
-          placeholder="Optional: Enter video URL"
-          type="text"
-        />
-
+      
         <Button
           onClick={sendPost}
           type="submit"
